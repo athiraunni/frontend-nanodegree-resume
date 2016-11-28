@@ -2,7 +2,7 @@ var bio = {
     "name" : "Athira Unni",
     "role" : "Web Developer",
     "contacts" : {
-        "mobile" : "1234567890",
+        "mobile" : "9446840878",
         "email" : "athirau072@gmail.com",
         "github" : "athiraunni",
         "location" : "India"
@@ -18,7 +18,6 @@ var formattedName = HTMLheaderName.replace("%data%" , bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%" , bio.role);
 var formattedBioPic = HTMLbioPic.replace("%data%" , bio.bioPic);
 
-//var formattedContactGeneric = HTMLcontactGeneric.replace("%contact%" , bio.contacts);
 var formattedMobile = HTMLmobile.replace("%data%" , bio.contacts.mobile);
 var formattedEmail = HTMLemail.replace("%data%" , bio.contacts.email);
 var formattedGithub = HTMLgithub.replace("%data%" , bio.contacts.github);
@@ -29,17 +28,13 @@ var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%" , bio.welcomeMessage);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $('#header').append(formattedBioPic);
-//$("#main").append(formattedContactGeneric);
-/*$('#topContacts', '#footerContacts').append(formattedMobile);
-$('#topContacts', '#footerContacts').append(formattedEmail);
-$('#topContacts', '#footerContacts').append(formattedGithub);
-$('#topContacts', '#footerContacts').append(formattedLocation);*/
 $('#topContacts').append(formattedMobile);
-$('#footerContacts').append(formattedMobile);
+//$('#footerContacts').append(formattedMobile);
 $('#topContacts').append(formattedEmail);
-$('#footerContacts').append(formattedEmail);
+//$('#footerContacts').append(formattedEmail);
 $('#topContacts').append(formattedGithub);
-$('#footerContacts').append(formattedGithub);
+//$('#footerContacts').append(formattedGithub);
+$('#topContacts').append(formattedLocation);
 $('#header').append(formattedWelcomeMsg);
 
 //if (bio.skills.length > 0) {
@@ -54,18 +49,14 @@ $('#header').append(formattedWelcomeMsg);
 
 bio.display();
 
-   /* var formattedSkills = HTMLskills.replace("%data%" , bio.skills[0]);
-    $("#skills").append(formattedSkills);
-    var formattedSkills = HTMLskills.replace("%data%" , bio.skills[1]);
-    $("#skills").append(formattedSkills);
-    var formattedSkills = HTMLskills.replace("%data%" , bio.skills[2]);
-    $("#skills").append(formattedSkills);
-    var formattedSkills = HTMLskills.replace("%data%" , bio.skills[3]);
-    $("#skills").append(formattedSkills);
-    var formattedSkills = HTMLskills.replace("%data%" , bio.skills[4]);
-    $("#skills").append(formattedSkills); */
+function inName(name) {
+    name = name.trim().split(" ");
+    console.log(name);
+    name[1] = name[1].toUpperCase();
+    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
 
-
+        return name[0] +" "+ name[1];
+}
 
 var education = {
     "schools" : [
@@ -102,7 +93,6 @@ var education = {
     ]
 }
 //$("#main").prepend(education);
-
 var work = {
     "jobs" : [
         {
@@ -120,13 +110,13 @@ var work = {
             "location" : "Kochi"
         }
     ]
-}
+};
+
+function displayWork(){
 //$("#main").prepend(work);
 for(job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
 
-//var formattedWorkStart = HTMLworkStart.replace("%data%" , work.jobs);
-//$("#main").append(formattedWorkStart);
 var formattedWorkEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[job].employer);
 //$("#main").append(formattedWorkEmployer);
 var formattedWorkTitle = HTMLworkTitle.replace("%data%" , work.jobs[job].title);
@@ -141,7 +131,8 @@ $(".work-entry:last").append(formattedWorkDescription);
 var formattedWorkLocation = HTMLworkLocation.replace("%data%" , work.jobs[job].location);
 $(".location-text:last").append(formattedWorkLocation);
 }
-
+}
+displayWork();
 /*var formattedWorkEmployer = HTMLworkEmployer.replace("%data%" , work.jobs[1].employer);
 $("#main").append(formattedWorkEmployer);
 var formattedWorkTitle = HTMLworkTitle.replace("%data%" , work.jobs[1].title);
@@ -157,56 +148,52 @@ var project = {
     "projects" : [
         {
             "title" : "HomeAutomation using IoT",
-            "year" : 2016,
-            "description" : "",
-            "url" : ""
+            "date" : "2016",
+           "description" : "A hardware project that is ought to be controlled by an Android application for the purpose of Home Automation and security. The cheaper but efficient components selected as the building parts of this idea makes this project a success and relevant for the society including common people.",
+            "images" : "images/prj2.png"
        },
        {
             "title" : "Digital Notice Board",
-            "year" : 2015,
-            "description" : "",
-            "url" : "https://github.com/athiraunni/DNB_Mini-Project.git"
+            "date" : "2015",
+            "description" : "A software project to help schools and colleges to display notices and other information to a mass audience. User friendly and easily upgradeable one. The language used was Java in the back end and PHP in front end. The project was submitted to my college and is going to be tsken up by the upcoming batches for improvement and some modifications attaching relevant hardware components.",
+            "images" : "images/prj1.jpg"
        }
     ]
-}
-//$("#main").prepend(projects);
-var formattedProjectStart = HTMLprojectStart.replace("%data%" , project.projects);
-$("#main").append(formattedProjectStart);
-var formattedProjectTitle = HTMLprojectTitle.replace("%data%" , project.projects[0].title);
-$("#main").append(formattedProjectTitle);
-var formattedProjectYear = HTMLprojectDates.replace("%data%" , project.projects[0].year);
-$("#main").append(formattedProjectYear);
-var formattedProjectDescription = HTMLprojectDescription.replace("%data%" , project.projects[0].description);
-$("#main").append(formattedProjectDescription);
-var formattedProjectUrl = HTMLprojectUrl.replace("%data%" , project.projects[0].url);
-$("#main").append(formattedProjectUrl);
+};
 
-var formattedProjectTitle = HTMLprojectTitle.replace("%data%" , project.projects[1].title);
-$("#main").append(formattedProjectTitle);
-var formattedProjectYear = HTMLprojectDates.replace("%data%" , project.projects[1].year);
-$("#main").append(formattedProjectYear);
-var formattedProjectDescription = HTMLprojectDescription.replace("%data%" , project.projects[1].description);
-$("#main").append(formattedProjectDescription);
-var formattedProjectUrl = HTMLprojectUrl.replace("%data%" , project.projects[1].url);
-$("#main").append(formattedProjectUrl);
+$("#projects").append(HTMLprojectStart);
 
-var cameron = {};
-cameron.job = "course dev";
-var makeCourse = function() {
-    //make a course
-    console.log("Made a course");
-}
- var courses = 0;
- while(cameron.job === "course dev") {
-    makeCourse();
-    courses = courses + 1;
-    if(courses === 10){
-        cameron.job = "learning specialist";
-    }
- }
+var title = project.projects[0].title;
+var formattedProjectTitle = HTMLprojectTitle.replace("%data%",title);
+$(".project-entry:last").append(formattedProjectTitle);
+var date = project.projects[0].date;
+var formattedProjectDate = HTMLprojectDates.replace("%data%",date);
+$(".project-entry:last").append(formattedProjectDate);
+var description = project.projects[0].description;
+var formattedProjectDescription = HTMLprojectDescription.replace("%data%",description);
+$(".project-entry:last").append(formattedProjectDescription);
+var images = project.projects[0].images;
+var formattedProjectImage = HTMLprojectImage.replace("%data%",images);
+$(".project-entry:last").append(formattedProjectImage);
 
- console.log(cameron.job);
+var title = project.projects[1].title;
+var formattedProjectTitle = HTMLprojectTitle.replace("%data%",title);
+$(".project-entry:last").append(formattedProjectTitle);
+var date = project.projects[1].date;
+var formattedProjectDate = HTMLprojectDates.replace("%data%",date);
+$(".project-entry:last").append(formattedProjectDate);
+var description = project.projects[1].description;
+var formattedProjectDescription = HTMLprojectDescription.replace("%data%",description);
+$(".project-entry:last").append(formattedProjectDescription);
+var images = project.projects[1].images;
+var formattedProjectImage = HTMLprojectImage.replace("%data%",images);
+$(".project-entry:last").append(formattedProjectImage);
 
- for(var i = 0;i<9;i++){
-    console.log(i);
- }
+/*$(document).click(function(loc){
+    var x = loc.pageX;
+    var y = loc.pageY;
+
+    logClicks(x,y);
+});*/
+
+$("#mapDiv").append(googleMap);
