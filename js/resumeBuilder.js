@@ -177,7 +177,7 @@ var education = {
             "location" : "Sreekrishnapuram",
             "subject" : "Biology"
         }
-    ]
+    ],
       "onlineClasses" : [
     {
         "name" : "Information Security",
@@ -212,19 +212,21 @@ education.schools.forEach(function(school) {
 displaySchool();
 ////////////////
 
-function displayOnline(){
+ function displayOnline(){
  education.onlineClasses.forEach(function(onlineClass) {
     $("#education").append(HTMLschoolStart);
 
-    var formattedonlineHeader = HTMLonlineClasses;
-    var formattedonlineTitle = HTMLonlineTitle.replace("%data%", onlineClasses.name);
-    var formattedonlineSchool = HTMLonlineSchool.replace("%data%", onlineClasses.school);
-    var formattedonlineDates = HTMLonlineDates.replace("%data%", onlineClasses.year);
-    var formattedonlineURL = HTMLonlineURL.replace("%data%", onlineClasses.url);
-    var formattedbiinfo = formattedonlineHeader + formattedonlineTitle + formattedonlineSchool + formattedonlineDates + formattedonlineURL ;
+
+    var formattedonlineTitle = HTMLonlineTitle.replace("%data%", onlineClass.name);
+    var formattedonlineSchool = HTMLonlineSchool.replace("%data%", onlineClass.school);
+    var formattedonlineDates = HTMLonlineDates.replace("%data%", onlineClass.year);
+    var formattedonlineURL = HTMLonlineURL.replace("%data%", onlineClass.url);
+    var formattedbiinfo = formattedonlineTitle + formattedonlineSchool + formattedonlineDates + formattedonlineURL ;
     $(".education-entry:last").append(formattedbiinfo);
  });
 }
+var formattedonlineHeader = HTMLonlineClasses;
+$(".education-entry:last").append(formattedonlineHeader);
 displayOnline();
 
 /*$(document).click(function(loc){
