@@ -29,12 +29,13 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $('#header').append(formattedBioPic);
 $('#topContacts').append(formattedMobile);
-//$('#footerContacts').append(formattedMobile);
+$('#footerContacts').append(formattedMobile);
 $('#topContacts').append(formattedEmail);
-//$('#footerContacts').append(formattedEmail);
+$('#footerContacts').append(formattedEmail);
 $('#topContacts').append(formattedGithub);
-//$('#footerContacts').append(formattedGithub);
+$('#footerContacts').append(formattedGithub);
 $('#topContacts').append(formattedLocation);
+$('#footerContacts').append(formattedLocation);
 $('#header').append(formattedWelcomeMsg);
 
 //if (bio.skills.length > 0) {
