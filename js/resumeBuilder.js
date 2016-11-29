@@ -58,41 +58,6 @@ function inName(name) {
         return name[0] +" "+ name[1];
 }
 
-var education = {
-    "schools" : [
-        {
-            "name" : "GEC Sreekrishnapuram",
-            "city" : "Sreekrishnapuram",
-            "degree" : "B-Tech",
-            "subject" : "Computer Science",
-            "year" : 2016,
-            "url" : "http://example.com"
-        },
-        {
-            "name" : "HSS Sreekrishnapuram",
-            "city" : "Sreekrishnapuram",
-            "degree" : "High School",
-            "subject" : "Biology",
-            "year" : 2011,
-            "url" : "http://example.com"
-        }
-    ],
-    "onlineCourses" : [
-    {
-        "name" : "Information Security",
-        "school" : "NPTEL",
-        "year" : 2014,
-        "url" : "http://www.nptel.ac.in"
-    },
-    {
-        "name" : "Frontend Web Development",
-        "school" : "Udacity",
-        "year" : 2016,
-        "url" : "http://www.udacity.com/nanodegrees/nd001"
-    }
-    ]
-}
-//$("#main").prepend(education);
 var work = {
     "jobs" : [
         {
@@ -166,28 +131,135 @@ $("#projects").append(HTMLprojectStart);
 var title = project.projects[0].title;
 var formattedProjectTitle = HTMLprojectTitle.replace("%data%",title);
 $(".project-entry:last").append(formattedProjectTitle);
+
 var date = project.projects[0].date;
 var formattedProjectDate = HTMLprojectDates.replace("%data%",date);
 $(".project-entry:last").append(formattedProjectDate);
+
 var description = project.projects[0].description;
 var formattedProjectDescription = HTMLprojectDescription.replace("%data%",description);
 $(".project-entry:last").append(formattedProjectDescription);
+
 var images = project.projects[0].images;
 var formattedProjectImage = HTMLprojectImage.replace("%data%",images);
 $(".project-entry:last").append(formattedProjectImage);
 
+
 var title = project.projects[1].title;
 var formattedProjectTitle = HTMLprojectTitle.replace("%data%",title);
 $(".project-entry:last").append(formattedProjectTitle);
+
 var date = project.projects[1].date;
 var formattedProjectDate = HTMLprojectDates.replace("%data%",date);
 $(".project-entry:last").append(formattedProjectDate);
+
 var description = project.projects[1].description;
 var formattedProjectDescription = HTMLprojectDescription.replace("%data%",description);
 $(".project-entry:last").append(formattedProjectDescription);
+
 var images = project.projects[1].images;
 var formattedProjectImage = HTMLprojectImage.replace("%data%",images);
 $(".project-entry:last").append(formattedProjectImage);
+
+var education = {
+    "schools" : [
+        {
+            "name" : "GEC Sreekrishnapuram",
+            "degree" : "B-Tech",
+            "date" : "2016",
+            "location" : "Sreekrishnapuram",
+            "subject" : "Computer Science"
+        },
+        {
+            "name" : "HSS Sreekrishnapuram",
+            "degree" : "High School",
+            "date" : "2011",
+            "location" : "Sreekrishnapuram",
+            "subject" : "Biology"
+        }
+    ]
+};
+
+////////////////
+/* function displaySchool(){
+education.schools.forEach(function(school) {
+  $("#education").append(HTMLschoolStart);
+
+  var formattedschoolName = HTMLschoolName.replace("%data%", school.name);
+  var formattedschoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
+  var formattedschoolDates = HTMLschoolDates.replace("%data%", school.date);
+  var formattedschoolLocation = HTMLschoolLocation.replace("%data%", school.location);
+  var formattedschoolMajor = HTMLschoolMajor.replace("%data%", school.subject);
+ // var formattedurl = HTMLonlineURL.replace("%data%", school.url);
+  var formatteduniinfo = formattedschoolName + formattedschoolDegree + formattedschoolDates + formattedschoolLocation + formattedschoolMajor;
+  $(".education-entry:last").append(formatteduniinfo);
+}
+}
+displaySchool(); */
+////////////////
+
+
+/* $("#school").append(HTMLschoolStart);
+
+var name = school.colleges[0].name;
+var formattedSchoolName = HTMLschoolName.replace("%data%" , name);
+var degree = school.colleges[0].degree;
+var formattedSchoolDegree = HTMLschoolDegree.replace("%data%" , degree);
+var formattedSchoolNameDegree = formattedSchoolName+ formattedSchoolDegree;
+$(".school-entry:last").append(formattedSchoolNameDegree);
+
+var dates = school.colleges[0].date;
+var formattedSchoolDates = HTMLschoolDates.replace("%data%" , dates);
+$(".school-entry:last").append(formattedSchoolDates);
+
+var location = school.colleges[0].location;
+var formattedSchoolLocation = HTMLschoolLocation.replace("%data%" , location);
+$(".location-text:last").append(formattedSchoolLocation);
+
+var major = school.colleges[0].subject;
+var formattedSchoolMajor = HTMLschoolMajor.replace("%data%" , major);
+$(".school-entry:last").append(formattedSchoolMajor);
+
+//////////////////////////////////////////////////
+
+var name = school.colleges[1].name;
+var formattedSchoolName = HTMLschoolName.replace("%data%" , name);
+var degree = school.colleges[1].degree;
+var formattedSchoolDegree = HTMLschoolDegree.replace("%data%" , degree);
+var formattedSchoolNameDegree = formattedSchoolName+ formattedSchoolDegree;
+$(".school-entry:last").append(formattedSchoolNameDegree);
+
+var dates = school.colleges[1].date;
+var formattedSchoolDates = HTMLschoolDates.replace("%data%" , dates);
+$(".school-entry:last").append(formattedSchoolDates);
+
+var location = school.colleges[1].location;
+var formattedSchoolLocation = HTMLschoolLocation.replace("%data%" , location);
+$(".location-text:last").append(formattedSchoolLocation);
+
+var major = school.colleges[1].subject;
+var formattedSchoolMajor = HTMLschoolMajor.replace("%data%" , major);
+$(".school-entry:last").append(formattedSchoolMajor);
+
+*/
+
+var onlineClasses ={
+    "onlineCourses" : [
+    {
+        "name" : "Information Security",
+        "school" : "NPTEL",
+        "year" : "2014",
+        "url" : "http://www.nptel.ac.in"
+    },
+    {
+        "name" : "Frontend Web Development",
+        "school" : "Udacity",
+        "year" : "2016",
+        "url" : "http://www.udacity.com/nanodegrees/nd001"
+    }
+    ]
+};
+
 
 /*$(document).click(function(loc){
     var x = loc.pageX;
@@ -195,5 +267,6 @@ $(".project-entry:last").append(formattedProjectImage);
 
     logClicks(x,y);
 });*/
+
 
 $("#mapDiv").append(googleMap);
