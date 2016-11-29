@@ -181,7 +181,7 @@ var education = {
 };
 
 ////////////////
-/* function displaySchool(){
+ function displaySchool(){
 education.schools.forEach(function(school) {
   $("#education").append(HTMLschoolStart);
 
@@ -193,9 +193,9 @@ education.schools.forEach(function(school) {
  // var formattedurl = HTMLonlineURL.replace("%data%", school.url);
   var formatteduniinfo = formattedschoolName + formattedschoolDegree + formattedschoolDates + formattedschoolLocation + formattedschoolMajor;
   $(".education-entry:last").append(formatteduniinfo);
+}; )
 }
-}
-displaySchool(); */
+displaySchool(); 
 ////////////////
 
 
