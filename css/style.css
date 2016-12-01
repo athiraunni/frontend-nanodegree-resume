@@ -1,4 +1,8 @@
-body,
+body{
+  color: #555753;
+  background: #fff url(http://csszengarden.com/001/blossoms.jpg) no-repeat bottom right;
+  /*   CSS help courtesy : CSSGardens    */
+  },
 div,
 ul,
 li,
