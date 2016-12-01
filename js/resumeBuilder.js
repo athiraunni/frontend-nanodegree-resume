@@ -97,27 +97,27 @@ work.display = function() {
 }
 work.display();
 
-var project = {
+var projects = {
     "projects": [{
         "title": "HomeAutomation using IoT",
-        "date": "2016",
+        "dates": "2016",
         "description": "A hardware project that is ought to be controlled by an Android application for the purpose of Home Automation and security. The cheaper but efficient components selected as the building parts of this idea makes this project a success and relevant for the society including common people.",
-        "images": "images/prj2.png"
+        "images": ["images/prj2.png"]
     }, {
         "title": "Digital Notice Board",
-        "date": "2015",
+        "dates": "2015",
         "description": "A software project to help schools and colleges to display notices and other information to a mass audience. User friendly and easily upgradeable one. The language used was Java in the back end and PHP in front end. The project was submitted to my college and is going to be tsken up by the upcoming batches for improvement and some modifications attaching relevant hardware components.",
-        "images": "images/prj1.jpg"
+        "images": ["images/prj1.jpg"]
     }]
 };
 
-project.display = function() {
-    project.projects.forEach(function(project) {
+projects.display = function() {
+    projects.projects.forEach(function(project) {
         $("#projects").append(HTMLprojectStart);
 
         var formattedProjectTitle = HTMLprojectTitle.replace("%data%", project.title);
         $(".project-entry:last").append(formattedProjectTitle);
-        var formattedProjectDate = HTMLprojectDates.replace("%data%", project.date);
+        var formattedProjectDate = HTMLprojectDates.replace("%data%", project.dates);
         $(".project-entry:last").append(formattedProjectDate);
         var formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.description);
         $(".project-entry:last").append(formattedProjectDescription);
@@ -125,31 +125,33 @@ project.display = function() {
         $(".project-entry:last").append(formattedProjectImage);
     });
 }
-project.display();
+projects.display();
 
 var education = {
     "schools": [{
         "name": "GEC Sreekrishnapuram",
         "degree": "B-Tech",
-        "date": "2016",
+        "dates": "2016",
         "location": "Sreekrishnapuram",
-        "majors": ["Computer Science"]
+        "majors": ["Computer Science"],
+        "url" : "http://www.gecskp.ac.in/"
     }, {
         "name": "HSS Sreekrishnapuram",
         "degree": "High School",
-        "date": "2011",
+        "dates": "2011",
         "location": "Sreekrishnapuram",
-        "majors": ["Biology"]
+        "majors": ["Biology"],
+        "url" : "http://www.hsssreekrishnapurampalakkad.elisting.in/"
     }],
-    "onlineClasses": [{
+    "onlineCourses": [{
         "title": "Information Security",
         "school": "NPTEL",
-        "year": "2014",
+        "dates": "2014",
         "url": "http://www.nptel.ac.in"
     }, {
         "title": "Frontend Web Development",
         "school": "Udacity",
-        "year": "2016",
+        "dates": "2016",
         "url": "http://www.udacity.com/nanodegrees/nd001"
     }]
 };
@@ -160,22 +162,23 @@ education.display = function() {
 
         var formattedschoolName = HTMLschoolName.replace("%data%", school.name);
         var formattedschoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
-        var formattedschoolDates = HTMLschoolDates.replace("%data%", school.date);
+        var formattedschoolDates = HTMLschoolDates.replace("%data%", school.dates);
         var formattedschoolLocation = HTMLschoolLocation.replace("%data%", school.location);
         var formattedschoolMajor = HTMLschoolMajor.replace("%data%", school.majors);
-        var formatteduniinfo = formattedschoolName + formattedschoolDegree + formattedschoolDates + formattedschoolLocation + formattedschoolMajor;
+        var formattedschoolURL = HTMLschoolURL.replace("%data%", school.url);
+        var formatteduniinfo = formattedschoolName + formattedschoolDegree + formattedschoolDates + formattedschoolLocation + formattedschoolMajor + formattedschoolURL;
         $(".education-entry:last").append(formatteduniinfo);
     });
 
     var formattedonlineHeader = HTMLonlineClasses;
     $(".education-entry:last").append(formattedonlineHeader);
 
-    education.onlineClasses.forEach(function(onlineClass) {
+    education.onlineCourses.forEach(function(onlineClass) {
         $("#education").append(HTMLschoolStart);
 
         var formattedonlineTitle = HTMLonlineTitle.replace("%data%", onlineClass.title);
         var formattedonlineSchool = HTMLonlineSchool.replace("%data%", onlineClass.school);
-        var formattedonlineDates = HTMLonlineDates.replace("%data%", onlineClass.year);
+        var formattedonlineDates = HTMLonlineDates.replace("%data%", onlineClass.dates);
         var formattedonlineURL = HTMLonlineURL.replace("%data%", onlineClass.url);
         var formattedbiinfo = formattedonlineTitle + formattedonlineSchool + formattedonlineDates + formattedonlineURL;
         $(".education-entry:last").append(formattedbiinfo);
